@@ -61,7 +61,7 @@ related: [相對路徑列表]
 4. **協定登記**：每個數字都能對應到 `methods.md` 的某個協定與版本；不同協定的數字不放在同一張表比較。
 5. **來源強度**：文獻的 `source` 標明讀過全文、摘要或憑記憶；被引用、比較或依其實作之前必須讀完全文。實驗寫明限制。
 6. **可重現**：實驗記錄有完整指令、程式版本、結果路徑、seed。
-7. **狀態詞彙**：open → proposed → planned → supported / confirmed / refuted / superseded。confirmed 的條件：實作類需通過有已知答案的驗證測試；實驗類需多 seed 或多條件；依賴文獻者維持 supported，除非我們自己也獨立驗證。
+7. **狀態詞彙**：open → proposed → planned → analyzing → supported / confirmed / refuted / superseded。confirmed 的條件：實作類需通過有已知答案的驗證測試；實驗類需多 seed 或多條件；依賴文獻者維持 supported，除非我們自己也獨立驗證。
 8. **決策來源**：設計決策記錄決定者；「未經討論」的預設值要標明。
 
 **審查檢查清單**：

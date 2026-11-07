@@ -14,7 +14,7 @@ import os
 import re
 import sys
 
-STATUS = {"open", "proposed", "planned", "supported", "confirmed", "refuted", "superseded", "done"}
+STATUS = {"open", "proposed", "planned", "analyzing", "supported", "confirmed", "refuted", "superseded", "done"}
 
 
 def frontmatter(txt):

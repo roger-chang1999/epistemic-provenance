@@ -2,7 +2,7 @@
 
 列出：
   1. 假設總覽：依狀態分組（從 hypotheses.md 的表格解析）
-  2. 等待使用者的 node：proposed / planned 的假設與實驗
+  2. 等待使用者的 node：proposed / planned / analyzing 的假設與實驗
   3. 疑似狀態不一致：假設是 supported/confirmed，但連到的實驗尚未完成；
      假設是 confirmed，但連到的實驗都只有單一 seed
   4. 單一 seed 的實驗
@@ -22,7 +22,7 @@ import os
 import re
 import sys
 
-STATUS = ["open", "proposed", "planned", "supported", "confirmed", "refuted", "superseded", "done"]
+STATUS = ["open", "proposed", "planned", "analyzing", "supported", "confirmed", "refuted", "superseded", "done"]
 
 
 def frontmatter(txt):
@@ -112,9 +112,9 @@ def main():
         P("（hypotheses.md 中沒有找到 `| H# |` 開頭的表格列）")
     P("")
 
-    P("## 2. 等待使用者的 node（proposed / planned）\n")
-    waiting = [h for h in hyps if h["status"] in ("proposed", "planned")]
-    waiting_exp = [k for k, v in exps.items() if v["status"] in ("proposed", "planned")]
+    P("## 2. 等待使用者的 node（proposed / planned / analyzing）\n")
+    waiting = [h for h in hyps if h["status"] in ("proposed", "planned", "analyzing")]
+    waiting_exp = [k for k, v in exps.items() if v["status"] in ("proposed", "planned", "analyzing")]
     if waiting or waiting_exp:
         for h in waiting:
             P(f"- {h['id']}（{h['status']}）：{h['text'][:70]}")
