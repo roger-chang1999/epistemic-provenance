@@ -1,0 +1,14 @@
+{
+  "name": "metacognition",
+  "description": "roger-chang1999 的研究工作流程 plugin",
+  "owner": {
+    "name": "roger-chang1999"
+  },
+  "plugins": [
+    {
+      "name": "metacognition",
+      "source": "./",
+      "description": "研究思考軌跡紀錄系統（research log）"
+    }
+  ]
+}
