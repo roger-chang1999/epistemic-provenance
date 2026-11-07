@@ -1,14 +1,14 @@
 {
-  "name": "metacognition",
+  "name": "epistemic-provenance",
   "description": "roger-chang1999 的研究工作流程 plugin",
   "owner": {
     "name": "roger-chang1999"
   },
   "plugins": [
     {
-      "name": "metacognition",
+      "name": "epistemic-provenance",
       "source": "./",
-      "description": "研究思考軌跡紀錄系統（research log）"
+      "description": "知識來源追溯的研究紀錄系統（research log）"
     }
   ]
 }

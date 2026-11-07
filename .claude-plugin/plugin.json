@@ -1,7 +1,7 @@
 {
-  "name": "metacognition",
+  "name": "epistemic-provenance",
   "version": "0.1.0",
-  "description": "研究思考軌跡紀錄系統：假設中樞、評估協定登記、只追加的想法演變、實驗與文獻紀錄、因果線分離",
+  "description": "知識來源追溯：為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄",
   "author": {
     "name": "roger-chang1999"
   }

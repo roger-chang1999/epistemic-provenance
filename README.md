@@ -1,8 +1,12 @@
-# metacognition
+# epistemic-provenance（知識來源追溯）
 
-研究思考軌跡紀錄系統，可在 Claude Code 和 claude.ai 使用。
+> **為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄。**
 
-名稱來自心理學的「後設認知」：對自己思考的思考。這套紀錄方式要防範研究中常見的認知偏誤：
+研究紀錄系統，可在 Claude Code 和 claude.ai 使用。
+
+**Provenance** 原指藝術品從創作到現在的完整經手紀錄：每一手都要記錄，而且紀錄不能被竄改。**Epistemic** 表示追溯的對象是知識主張。
+
+設計動機來自心理學的「後設認知」（metacognition）：研究者很容易騙到自己。這套紀錄方式要防範研究中常見的認知偏誤：
 
 - **來源混淆**：把看到結果之後才想到的解釋，誤記成原始設計
 - **後見之明偏誤**：知道結果後，回頭改寫當初的推理
@@ -27,13 +31,13 @@ research_log/
 這是私人 repo，安裝時會用你本機的 git 登入（已執行過 `gh auth login` 和 `gh auth setup-git` 即可）。
 
 ```bash
-claude plugin marketplace add roger-chang1999/metacognition
-claude plugin install metacognition@metacognition
+claude plugin marketplace add roger-chang1999/epistemic-provenance
+claude plugin install epistemic-provenance@epistemic-provenance
 ```
 
-或在 Claude Code 對話中輸入 `/plugin marketplace add roger-chang1999/metacognition`，再用 `/plugin` 面板安裝。
+或在 Claude Code 對話中輸入 `/plugin marketplace add roger-chang1999/epistemic-provenance`，再用 `/plugin` 面板安裝。
 
-更新：`claude plugin marketplace update metacognition`
+更新：`claude plugin marketplace update epistemic-provenance`
 
 ## 安裝：claude.ai
 
@@ -41,7 +45,7 @@ claude plugin install metacognition@metacognition
 python tools/package_for_claudeai.py
 ```
 
-會產生 `dist/metacognition.zip`。到 claude.ai 的「設定 → Capabilities → Skills」上傳。
+會產生 `dist/epistemic-provenance.zip`。到 claude.ai 的「設定 → Capabilities → Skills」上傳。
 
 ## 使用
 
@@ -53,14 +57,14 @@ python tools/package_for_claudeai.py
 - 「整理這篇論文的筆記」
 - 「我們現在研究進度到哪？」
 
-也可以明確呼叫：`/metacognition:metacognition`
+也可以明確呼叫：`/epistemic-provenance:epistemic-provenance`
 
 ## 內容
 
 ```
 .claude-plugin/
   plugin.json, marketplace.json
-skills/metacognition/
+skills/epistemic-provenance/
   SKILL.md                      核心原則與工作流程
   assets/templates/             各類檔案的空白模板
   scripts/init_research_log.py  建立骨架（不覆蓋既有檔案）
