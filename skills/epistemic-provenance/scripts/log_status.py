@@ -92,7 +92,7 @@ def main():
             evidence = " ".join(cells[2:])
             linked = re.findall(r"experiments/([^)\s]+\.md)", evidence)
             hyps.append({"id": m.group(1), "text": text, "status": first_status(status_cell),
-                         "status_raw": re.sub(r"\*", "", status_cell)[:80], "section": section,
+                         "status_raw": re.sub(r"\*", "", status_cell), "section": section,
                          "linked": linked})
 
     P(f"# Research log 狀態總表（{today.isoformat()}）\n")
@@ -133,7 +133,9 @@ def main():
                 continue
             if h["status"] in ("supported", "confirmed") and exps[e]["status"] not in ("done",):
                 issues.append(f"- {h['id']} 為 {h['status']}，但連到的 experiments/{e} 狀態是 {exps[e]['status']}")
-        if h["status"] == "confirmed" and h["linked"] and all(exps.get(e, {}).get("seeds", 0) <= 1 for e in h["linked"]):
+        typed = any(k in h["status_raw"] for k in ("實作類", "多條件", "多 seed", "多seed"))
+        if (h["status"] == "confirmed" and not typed and h["linked"]
+                and all(exps.get(e, {}).get("seeds", 0) <= 1 for e in h["linked"])):
             issues.append(f"- {h['id']} 為 confirmed，但連到的實驗都只有 ≤1 個 seed：確認主張類型（實作類需有已知答案的驗證測試；實驗類需多 seed 或多條件；依賴文獻者應維持 supported）")
         if h["status"] in ("supported", "confirmed", "refuted") and not h["linked"]:
             issues.append(f"- {h['id']} 為 {h['status']}，但證據欄沒有連到任何實驗記錄")
