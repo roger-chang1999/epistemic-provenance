@@ -12,6 +12,21 @@
 - **後見之明偏誤**：知道結果後，回頭改寫當初的推理
 - **協定混用**：把不同方法量出來、名稱相同的數字放在同一張表比較
 
+## 研究流程：每個 node 有兩個人工關卡
+
+研究以 node（一個假設加上驗證它的實驗）為單位推進，在兩個關卡停下來和使用者討論：
+
+```
+① 提出假設 → ② 關卡一：設計討論 → ③ 執行 → ④ 關卡二：分析討論 → ⑤ 記錄、建立下一個 node
+```
+
+- **關卡一**：Claude 提出設計表（變因、對照、協定、預測、成本、需要使用者決定的地方），使用者確認後才執行。
+- **關卡二**：Claude 報告結果 vs 預測、替代解釋、限制，提出 2–3 個下一步選項，由使用者選擇。
+- 兩個關卡都會列出兩個**選用的審查**，使用者說要才做：**嚴謹審查**（逐項檢查研究謬誤並具體追問）、**文獻搜尋**（針對具體問題找新的引用）。
+- 每個設計決策都記錄**誰決定的**，未經討論的預設值會如實標明。
+
+## 紀錄結構
+
 做法是在專案裡維護一個 `research_log/`：
 
 ```
@@ -56,6 +71,8 @@ python tools/package_for_claudeai.py
 - 「開一個新的 idea，記下我們剛剛的討論」
 - 「整理這篇論文的筆記」
 - 「我們現在研究進度到哪？」
+- 「我想驗證 X，我們來討論實驗設計」
+- 「實驗跑完了，幫我分析結果」
 
 也可以明確呼叫：`/epistemic-provenance:epistemic-provenance`
 
@@ -66,6 +83,8 @@ python tools/package_for_claudeai.py
   plugin.json, marketplace.json
 skills/epistemic-provenance/
   SKILL.md                      核心原則與工作流程
+  references/rigor-review.md    嚴謹審查：做法與研究謬誤檢查清單
+  references/literature-search.md  文獻搜尋：做法與記錄方式
   assets/templates/             各類檔案的空白模板
   scripts/init_research_log.py  建立骨架（不覆蓋既有檔案）
   scripts/check_links.py        檢查相對連結、frontmatter、ideas 編號

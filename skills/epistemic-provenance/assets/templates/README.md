@@ -40,7 +40,7 @@ research_log/
 ```markdown
 ---
 type: idea | paper | experiment
-status: open | planned | supported | confirmed | refuted | superseded | done
+status: open | proposed | planned | supported | confirmed | refuted | superseded | done
 date: YYYY-MM-DD
 related: [相對路徑列表]
 ---
