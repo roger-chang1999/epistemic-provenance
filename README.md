@@ -85,6 +85,7 @@ python tools/package_for_claudeai.py
 skills/epistemic-provenance/
   SKILL.md                      核心原則與工作流程
   references/rigor-review.md    嚴謹審查：做法與研究謬誤檢查清單
+  references/workflow-*.md      初始化、審查整份紀錄、撰寫論文（用到時才讀）
   references/literature-search.md  文獻搜尋：做法與記錄方式
   assets/templates/             各類檔案的空白模板
   scripts/init_research_log.py  建立骨架（不覆蓋既有檔案）
