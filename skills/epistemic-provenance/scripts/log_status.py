@@ -134,7 +134,7 @@ def main():
             if h["status"] in ("supported", "confirmed") and exps[e]["status"] not in ("done",):
                 issues.append(f"- {h['id']} 為 {h['status']}，但連到的 experiments/{e} 狀態是 {exps[e]['status']}")
         if h["status"] == "confirmed" and h["linked"] and all(exps.get(e, {}).get("seeds", 0) <= 1 for e in h["linked"]):
-            issues.append(f"- {h['id']} 為 confirmed，但連到的實驗都只有 ≤1 個 seed（確認是否有其他條件的重複驗證）")
+            issues.append(f"- {h['id']} 為 confirmed，但連到的實驗都只有 ≤1 個 seed：確認主張類型（實作類需有已知答案的驗證測試；實驗類需多 seed 或多條件；依賴文獻者應維持 supported）")
         if h["status"] in ("supported", "confirmed", "refuted") and not h["linked"]:
             issues.append(f"- {h['id']} 為 {h['status']}，但證據欄沒有連到任何實驗記錄")
     P("\n".join(issues) if issues else "- 無")
