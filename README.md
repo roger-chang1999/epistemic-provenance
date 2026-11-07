@@ -73,6 +73,7 @@ python tools/package_for_claudeai.py
 - 「我們現在研究進度到哪？」
 - 「我想驗證 X，我們來討論實驗設計」
 - 「實驗跑完了，幫我分析結果」
+- 「review 一下 research log」
 
 也可以明確呼叫：`/epistemic-provenance:epistemic-provenance`
 
@@ -88,5 +89,6 @@ skills/epistemic-provenance/
   assets/templates/             各類檔案的空白模板
   scripts/init_research_log.py  建立骨架（不覆蓋既有檔案）
   scripts/check_links.py        檢查相對連結、frontmatter、ideas 編號
+  scripts/log_status.py         狀態總表：假設分組、待確認 node、狀態不一致、單一 seed、未經討論的決策、弱來源文獻
 tools/package_for_claudeai.py   打包成 claude.ai 可上傳的 zip
 ```
