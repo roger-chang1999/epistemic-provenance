@@ -41,9 +41,11 @@ research_log/
 └── experiments/exp-slug.md    實驗記錄（含完整指令、限制）
 ```
 
-## 安裝：Claude Code
+## 實際範例
 
-這是私人 repo，安裝時會用你本機的 git 登入（已執行過 `gh auth login` 和 `gh auth setup-git` 即可）。
+[sediment-pinn-2d](https://github.com/roger-chang1999/sediment-pinn-2d) 的 `research_log/` 是用這個 skill 從頭維護的完整紀錄：一個物理資訊神經網路（PINN）的研究，包含 20 個假設、多輪消融實驗、每個設計決策的決定者，以及「發現問題 → 診斷 → 修正結論」的完整過程。裝好 skill 後，在那個專案裡問 Claude「我們現在研究進度到哪？」，就能看到它怎麼運作。
+
+## 安裝：Claude Code
 
 ```bash
 claude plugin marketplace add roger-chang1999/epistemic-provenance
@@ -93,3 +95,7 @@ skills/epistemic-provenance/
   scripts/log_status.py         狀態總表：假設分組、待確認 node、狀態不一致、單一 seed、未經討論的決策、弱來源文獻
 tools/package_for_claudeai.py   打包成 claude.ai 可上傳的 zip
 ```
+
+## 授權
+
+[MIT](LICENSE)
