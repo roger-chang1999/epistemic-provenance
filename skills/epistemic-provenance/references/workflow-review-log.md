@@ -2,6 +2,8 @@
 
 使用者說「review 一下 research log」、要把紀錄交給老師或合作者看，或隔一段時間回到專案時，讀這份文件。這是審查**紀錄本身**，和關卡中審查單一 node（`rigor-review.md`）不同。
 
+**注意**：使用者要的如果是「回顧研究走過的路」或「向老師報告進度」，那是工作流程 E（`workflow-progress-report.md`），不是這份。這份只找紀錄本身的錯；要交給他人看時，先做這份，再依 E 寫回顧。
+
 1. 執行：
    ```bash
    python <skill 目錄>/scripts/log_status.py <research_log 目錄>

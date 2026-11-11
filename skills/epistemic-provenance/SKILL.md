@@ -99,13 +99,14 @@ related: [相對路徑, ...]
 
 **D. 文獻筆記**：模板 `paper.md`；重點是「和我們的關係」「不可比之處」和誠實的 `source`。
 
-**E. 回報進度**：讀 `hypotheses.md` 和 `research_tree_overview.md`，摘要已確認、被推翻、進行中、等待決策的項目，附檔案連結。
+**E. 回報進度與研究歷程回顧**：先判斷使用者要短版（「進度到哪」：只列前沿）還是完整版（「從頭回顧」「要跟老師報告」：**依研究的依賴順序逐 node 回顧**，不依主題重新分組），判斷不出來就問。做法見 `references/workflow-progress-report.md`。
 
 **其他工作流程**（用到時才讀）：
 | 情境 | 讀這份 |
 |---|---|
 | 初始化新專案的 research log | `references/workflow-init.md` |
-| 審查整份紀錄（review、交給他人看、隔一段時間回來） | `references/workflow-review-log.md` |
+| 回報進度、從頭回顧研究歷程、向老師或合作者報告進度 | `references/workflow-progress-report.md` |
+| 審查紀錄本身有沒有錯（狀態不實、協定混用、結論超出證據）；交給他人看之前先做這個 | `references/workflow-review-log.md` |
 | 根據紀錄撰寫論文、報告 | `references/workflow-writing.md` |
 
 ## 寫作風格
