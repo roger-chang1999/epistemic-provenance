@@ -1,4 +1,4 @@
-"""把 skills/prove-it 打包成 claude.ai 可上傳的 zip（zip 根目錄為 prove-it/）。"""
+"""Package skills/prove-it into a zip that can be uploaded to claude.ai (zip root is prove-it/)."""
 import os
 import zipfile
 
@@ -19,7 +19,7 @@ def main():
                 full = os.path.join(dirpath, fn)
                 arc = os.path.join("prove-it", os.path.relpath(full, SKILL))
                 z.write(full, arc)
-    print("已產生", out)
+    print("Created", out)
 
 
 if __name__ == "__main__":

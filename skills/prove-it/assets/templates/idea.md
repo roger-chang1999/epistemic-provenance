@@ -5,22 +5,22 @@ date: {{YYYY-MM-DD}}
 related: []
 ---
 
-# {{一句話標題：這次思考轉折是什麼}}（主線 {{N}}）
+# {{One-line title: what this turn in thinking is}} (line {{N}})
 
-## 從哪裡來
-{{觸發這個想法的假設、實驗結果、討論或文獻。使用者提出的觀點要如實記錄原意。}}
+## Where it came from
+{{The hypothesis, experiment result, discussion, or paper that triggered this idea. Record a user's viewpoint faithfully, in its original sense.}}
 
-## 論證
-{{推理過程；如果有競爭的解釋，一併列出}}
+## Argument
+{{The reasoning; list competing explanations, if any}}
 
-## 預測（看結果前寫）
-- 如果成立，應該看到：{{}}
-- 如果看到 {{}}，就代表不成立
+## Prediction (written before seeing results)
+- If it holds, we should see: {{}}
+- If we see {{}}, it does not hold
 
-## 接下來
-{{要驗證什麼、用哪個實驗；對應的假設編號 H#}}
+## Next
+{{What to test and with which experiment; the corresponding hypothesis ID H#}}
 
-<!-- 之後有新證據時，不改上面的內容，在下面追加：
-## 更新（YYYY-MM-DD）
-{{新證據、結論怎麼改變}}
+<!-- When new evidence arrives later, don't change the text above; append below:
+## Update (YYYY-MM-DD)
+{{New evidence, and how the conclusion changes}}
 -->

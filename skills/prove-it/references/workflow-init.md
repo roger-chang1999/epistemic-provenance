@@ -1,17 +1,17 @@
-# 工作流程 A：初始化新專案的 research log
+# Workflow A: initialize a research log for a new project
 
-使用者要為專案建立 research log 時讀這份文件。
+Read this when the user wants to set up a research log for a project.
 
-1. 先問使用者，或從對話與計畫書整理出：專案名稱、目前的因果線（至少一條「原始研究動機」）、主要評估指標。
-2. 執行：
+1. Ask the user, or gather from the conversation and the proposal: the project name, the **log language** (see "Language" in `SKILL.md`), the current causal lines (at least one "original research motivation"), and the main evaluation metrics.
+2. Run:
    ```bash
-   python <skill 目錄>/scripts/init_research_log.py <專案根目錄> --project "<專案名稱>"
+   python <skill directory>/scripts/init_research_log.py <project root> --project "<project name>"
    ```
-   這會建立目錄和所有中樞檔案的骨架（含「給審查者的指引」）；已存在的檔案不會被覆蓋。
-3. 填入：
-   - `README.md` 的因果線定義
-   - `methods.md` 的第一個評估協定
-   - `hypotheses.md` 的初始假設
-   - `ideas/001-origin.md`：原始研究動機。有計畫書時，從計畫書整理研究問題、應驗證的假設，以及**不應先行宣稱的結論**。
-4. 如果專案已經有討論或實驗歷史，依時間順序補寫成 ideas 和 experiments，**明確標註是事後補記**，並在設計決策紀錄中標明哪些決策當時未經討論。
-5. 執行 `scripts/check_links.py`。
+   This creates the directories and skeletons for all hub files (including "Guidance for reviewers"); existing files are never overwritten. The templates are in English; when the log language is different, translate the headings and fixed phrases as you fill them in.
+3. Fill in:
+   - `README.md`: the log language and the causal line definitions
+   - `methods.md`: the first evaluation protocol
+   - `hypotheses.md`: the initial hypotheses
+   - `ideas/001-origin.md`: the original research motivation. If there is a proposal, extract from it the research questions, the hypotheses to test, and **the conclusions that should not be claimed in advance**.
+4. If the project already has a history of discussions or experiments, write it up as ideas and experiments in chronological order, **clearly marked as written after the fact**, and mark in the design decision logs which decisions were not discussed at the time.
+5. Run `scripts/check_links.py`.

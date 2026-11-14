@@ -1,45 +1,45 @@
-# 工作流程 E：回報進度與研究歷程回顧
+# Workflow E: progress report and research history review
 
-使用者問「現在進度到哪」「從頭回顧一遍」「整理整個過程」，或要向老師、合作者報告進度時，讀這份文件。
+Read this when the user asks "where are we now", "review it from the start", "summarize the whole process", or wants to report progress to an advisor or collaborator.
 
-目的是讓讀的人**沿著研究實際走過的路**理解每個決定：為什麼做這個實驗、看到什麼、因此往哪裡走。這和工作流程 G（`workflow-review-log.md`）不同：**G 找紀錄本身的錯，E 講研究走過的路**。要交給他人看時兩個都做，先 G 再 E。
+The goal is to let the reader understand each decision **along the path the research actually took**: why this experiment was run, what was seen, and where that led. This differs from workflow G (`workflow-review-log.md`): **G finds errors in the log itself; E tells the path the research took**. When handing the log to others, do both, G first, then E.
 
-## 先判斷要哪一種
+## First decide which one is wanted
 
-| 使用者的說法 | 產出 |
+| What the user says | Output |
 |---|---|
-| 「進度到哪」「現在在做什麼」「最近有什麼結果」 | **短版**：只列前沿 |
-| 「從頭回顧」「整理整個過程」「要跟老師／合作者報告」 | **完整版**：逐 node 依依賴順序回顧 |
+| "Where are we", "what are we working on", "any recent results" | **Short version**: frontier only |
+| "Review from the start", "summarize the whole process", "report to my advisor / collaborators" | **Full version**: node by node, in dependency order |
 
-判斷不出來就問，不要自己挑一個結構。
+If you can't tell, ask; don't pick a structure yourself.
 
-## 短版
+## Short version
 
-讀 `hypotheses.md` 最上方的前沿問題、`research_tree_overview.md` 最近的 block，列出：進行中的 node、等待使用者決策的事項、最近確認或推翻的結論。每項附檔案連結。
+Read the frontier questions at the top of `hypotheses.md` and the most recent blocks of `research_tree_overview.md`, and list: nodes in progress, items waiting for the user's decision, and conclusions recently confirmed or refuted. Link each item to its file.
 
-## 完整版：逐 node 依依賴順序
+## Full version: node by node, in dependency order
 
-1. **先跑狀態總表**：`scripts/log_status.py`（同工作流程 G 步驟 1）。有狀態不一致或等待中的 node，先處理，或在回顧裡標明。
-2. **骨架用研究的依賴順序，不依主題重新分組。** 依 `research_tree_overview.md` 的 block 順序走。它過時或缺 node 時，用 `hypotheses.md` 的 H#、ideas 的編號與日期、實驗記錄的 `related` 重建，並先把缺的 block 補進 `research_tree_overview.md`，再寫回顧。
-   理由：依主題分組（「機制」「比較」「邊界條件」各一節）會切斷「因為 A 的結果，才做 B」的因果關係。讀的人看到的是一堆結論，看不到研究是怎麼一步步走到這裡的，也看不出哪些方向是被結果逼出來的。
-3. **每個 node 一個 block，欄位固定**：
+1. **Run the status summary first**: `scripts/log_status.py` (same as step 1 of workflow G). Deal with any inconsistent statuses or waiting nodes first, or flag them in the review.
+2. **Structure the review by the research's dependency order, not regrouped by topic.** Follow the block order of `research_tree_overview.md`. If it is outdated or missing nodes, rebuild the order from the H# IDs in `hypotheses.md`, idea numbers and dates, and the `related` fields of experiment records; add the missing blocks to `research_tree_overview.md` first, then write the review.
+   Reason: grouping by topic ("mechanism", "comparisons", "boundary conditions", one section each) cuts the causal chain "because of A's result, we did B". The reader sees a pile of conclusions, not how the research got here step by step, and can't tell which directions were forced by results.
+3. **One block per node, with fixed fields**:
 
    ```markdown
-   ### N. H# — 一句話標題（主線 X；狀態，主張類型）
+   ### N. H# — one-line title (line X; status, claim type)
 
-   - **為什麼走到這裡**：前一個 node 的哪個結果觸發了它（第一個 node 寫原始動機）
-   - **假設**：一句話；誰提出、何時（有紀錄才寫）
-   - **設計**：變因、對照、評估協定、seed 數／fold 數
-   - **結果**：關鍵數字，附協定與 seed 數。一張小表或兩三個數字，不要貼完整表格
-   - **推論**：量到的事實和推測分開寫；寫明限制
-   - **⟹ 下一個**：推動了哪個 node，為什麼
+   - **How we got here**: which result of the previous node triggered it (for the first node, the original motivation)
+   - **Hypothesis**: one sentence; who proposed it and when (only if recorded)
+   - **Design**: variables, controls, evaluation protocol, number of seeds / folds
+   - **Result**: key numbers, with protocol and seed count. A small table or two or three numbers; don't paste the full tables
+   - **Inference**: separate measured facts from speculation; state the limitations
+   - **⟹ Next**: which node it led to, and why
    ```
 
-4. **被推翻、放棄、失敗的 node 照原本的順序列出**，不跳過，也不集中到最後。它們通常就是方向轉折的原因，拿掉之後後面的 node 看起來會像憑空出現。
-5. **分支**：在分叉的 node 註明「從這裡分出兩條線」。平行的分支可以一條走完再走下一條，但每條開頭要寫它是從哪個 node 分出來的。
-6. **開頭和結尾**：開頭放 5–7 點摘要（目前站在哪：已確認、被推翻、進行中）；結尾列出等待使用者決策的事項，以及已知需要修正的地方。
-7. **數字與措辭**沿用工作流程 F（`workflow-writing.md`）：依因果線分開、每個數字可追溯到協定與 seed 數、主張強度和狀態一致、推測要標明。
+4. **List refuted, abandoned, and failed nodes in their original order.** Don't skip them or collect them at the end. They are usually the reason for a change of direction; without them, later nodes look as if they came from nowhere.
+5. **Branches**: at the node where the research forks, note "two lines branch from here". Parallel branches can be walked one after the other, but each starts by stating which node it branched from.
+6. **Opening and closing**: open with a 5–7 point summary (where things stand: confirmed, refuted, in progress); close with the items awaiting the user's decision and the known corrections needed.
+7. **Numbers and wording** follow workflow F (`workflow-writing.md`): separate by causal line, every number traceable to a protocol and seed count, claim strength consistent with status, speculation labeled.
 
-## 產出位置
+## Where the output goes
 
-回顧是從紀錄推導出來的產物，不是紀錄本身。不要寫進 `research_log/`，放在專案的報告目錄（例如 `reports/`），或直接在對話中給。回顧過程中發現紀錄有錯，先回 `research_log/` 修正（遵守只追加原則），再寫回顧。
+The review is a product derived from the log, not part of the log. Don't write it into `research_log/`; put it in the project's reports directory (e.g. `reports/`) or give it directly in the conversation. If you find errors in the log while reviewing, fix them in `research_log/` first (following the append-only rule), then write the review.

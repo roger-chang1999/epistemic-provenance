@@ -1,23 +1,23 @@
 ---
 type: paper
-title: "{{論文標題}}"
-authors: {{作者}}
-venue: {{期刊/會議，年份}}
-doi: {{或 arXiv/URL}}
-source: {{讀過全文／只讀摘要／二手摘要／依記憶整理，未核對}}
+title: "{{Paper title}}"
+authors: {{Authors}}
+venue: {{Journal / conference, year}}
+doi: {{or arXiv / URL}}
+source: {{read full text (YYYY-MM-DD) / abstract only / secondary summary / from memory, unverified}}
 related: []
 ---
 
-# {{簡稱}}：{{一句話核心}}
+# {{Short name}}: {{one-line core idea}}
 
-## 核心
-{{問題、方法、關鍵結果（數字附條件）}}
+## Core
+{{Problem, method, key results (numbers with their conditions)}}
 
-## 和我們的關係
-{{支持或挑戰哪個假設 H#、屬於哪條因果線、可以借用什麼}}
+## Relation to our work
+{{Which hypothesis H# it supports or challenges, which causal line, what we can borrow}}
 
-## 不可比之處
-- {{設定、資料、架構、指標的差異；為什麼數字不能直接比}}
+## What is not comparable
+- {{Differences in setting, data, architecture, metrics; why the numbers can't be compared directly}}
 
-## 待辦
-- {{例如：讀全文確認 X}}
+## To-do
+- {{e.g. read the full text to confirm X}}

@@ -1,60 +1,60 @@
-# 嚴謹審查：做法與謬誤檢查清單
+# Rigor review: method and fallacy checklist
 
-使用者在關卡一或關卡二選擇「嚴謹審查」時，讀這份文件。
+Read this when the user chooses "rigor review" at checkpoint one or two.
 
-**目的**：給出嚴謹的建議，在謬誤進入紀錄和論文之前把它找出來。審查的價值在**具體的追問**，不在列出清單：「有沒有混淆變因？」沒有用，「A 和 B 的學習率都調過嗎？還是只有 B 調過？」才有用。
+**Purpose**: give rigorous recommendations and catch fallacies before they enter the log and the paper. The value of a review lies in **specific questions**, not in reciting a checklist: "Are there any confounders?" is useless; "Were the learning rates of both A and B tuned, or only B's?" is useful.
 
-## 做法
+## Method
 
-1. **挑出相關項目**：從下方清單中，挑出這個 node 風險最高的 3–6 項。不要每項都問，會稀釋重點，使用者也會疲勞。
-2. **具體追問**：每一項都要用這個 node 的實際內容提問，指出具體的數字、設定或句子。一次提出全部問題，或分兩三輪；如果使用者的回答引出新的疑點，就繼續追問。
-3. **給出判斷**：使用者回答後，對每一項給出結論：
-   | 項目 | 問題 | 嚴重程度 | 建議的修正 |
+1. **Pick the relevant items**: from the checklist below, pick the 3–6 highest-risk items for this node. Don't ask about every item; it dilutes the focus and tires the user.
+2. **Ask specific questions**: phrase each item in terms of this node's actual content, pointing to specific numbers, settings, or sentences. Ask all at once or over two or three rounds; if an answer raises a new doubt, keep asking.
+3. **Give a judgment**: after the user answers, give a conclusion for each item:
+   | Item | Problem | Severity | Suggested fix |
    |---|---|---|---|
-   嚴重程度分三級：
-   - **致命**：結論可能完全不成立，必須修正才能繼續
-   - **重要**：結論需要加上限制條件，或需要補一個實驗
-   - **次要**：寫進限制段落即可
-4. **雙向**：使用者也可以要求 Claude 為自己的設計或解讀辯護；這時 Claude 要誠實指出自己論證中最弱的地方，不要護短。
-5. **記錄**：審查結果寫進實驗記錄。關卡一的審查寫在「設計決策紀錄」之後；關卡二的審查寫在「分析討論」。被採納的修正，要說明改了什麼。
+   Three severity levels:
+   - **Fatal**: the conclusion may not hold at all; must be fixed before continuing
+   - **Major**: the conclusion needs added conditions, or an extra experiment is needed
+   - **Minor**: noting it in the limitations is enough
+4. **Both directions**: the user can also ask the agent to defend its own design or interpretation; the agent must then honestly point out the weakest part of its own argument, not defend it reflexively.
+5. **Record**: write the review results into the experiment record. A checkpoint-one review goes after the "Design decision log"; a checkpoint-two review goes in "Analysis discussion". For each fix adopted, state what was changed.
 
-審查不是為了否定，是為了讓結論站得穩。沒有發現問題時，就直接說沒有問題，不要為了顯得嚴謹而硬找問題。
+A review is not meant to reject; it is meant to make the conclusion stand firm. If you find no problems, say so plainly; don't manufacture problems to appear rigorous.
 
-## 檢查清單
+## Checklist
 
-### 設計階段（關卡一）
+### Design stage (checkpoint one)
 
-| 謬誤 | 要追問的問題 |
+| Fallacy | Question to ask |
 |---|---|
-| **混淆變因** | 這次比較的兩組，除了目標變因，還有什麼不一樣？（亂數、資料、步數、實作、硬體） |
-| **不公平的基準** | 新方法調過參數，基準有沒有用同樣的力氣調？基準是不是文獻上的合理設定？ |
-| **預測不可證偽** | 預測寫得夠具體嗎？有沒有任何可能的結果會被判定為「不成立」？ |
-| **統計力不足** | 預期的效果大小，和 seed 之間的變異比起來如何？目前的重複次數分得出差異嗎？ |
-| **協定不一致** | 所有組別是否用同一個評估協定、同一版資料？ |
-| **資料洩漏** | 測試或驗證資料有沒有以任何形式參與訓練、調參或選模型？（含時間序列隨機切分） |
-| **操作化錯誤** | 這個指標真的量到假設在說的東西嗎？還是只是方便量的替代品？ |
-| **分岔路徑** | 結果出來後，會不會有很多種分析方式可選？要不要先固定主要的分析方式？ |
+| **Confounders** | Besides the target variable, what else differs between the groups being compared? (randomness, data, steps, implementation, hardware) |
+| **Unfair baseline** | The new method was tuned; was the baseline tuned with the same effort? Is the baseline a reasonable setting from the literature? |
+| **Unfalsifiable prediction** | Is the prediction specific enough? Is there any possible result that would count as "does not hold"? |
+| **Insufficient power** | How does the expected effect size compare with the seed-to-seed variance? Can the current number of repetitions distinguish the difference? |
+| **Inconsistent protocol** | Do all groups use the same evaluation protocol and the same data version? |
+| **Data leakage** | Did test or validation data take part in training, tuning, or model selection in any form? (including random splits of time series) |
+| **Wrong operationalization** | Does this metric really measure what the hypothesis is about, or is it just a convenient proxy? |
+| **Forking paths** | After the results come in, will there be many possible ways to analyze them? Should the main analysis be fixed in advance? |
 
-### 分析階段（關卡二）
+### Analysis stage (checkpoint two)
 
-| 謬誤 | 要追問的問題 |
+| Fallacy | Question to ask |
 |---|---|
-| **事後合理化（HARKing）** | 這個解釋是看到結果之前就有的，還是之後才想出來的？如果是之後，要標成新假設，不能當成驗證。 |
-| **確認偏誤** | 結果「完全符合預期」時，有沒有認真找過反證？有沒有只報告支持假設的指標？ |
-| **雜訊當訊號** | 差異比 seed 之間的變異大嗎？單一 seed 的差異能下結論嗎？ |
-| **多重比較** | 比了很多組，是不是挑出最好看的那組來講？ |
-| **指標被鑽漏洞（Goodhart）** | 優化的指標變好了，真正關心的東西有沒有也變好？（例如 loss 很低但解是錯的） |
-| **過度推廣** | 只在一種條件下成立，結論有沒有寫成普遍成立？（例如「SGD 本質上不適合」其實只測了兩組設定） |
-| **相關當因果** | 兩件事一起變化，有沒有排除第三個因素？ |
-| **機制與結論混為一談** | 結論成立，不代表當初提出的機制是對的。機制有被獨立驗證嗎？ |
-| **倖存者偏差** | 失敗、發散、跑壞的 run 有沒有被排除在統計之外？ |
-| **趨均數迴歸** | 挑出表現特別差的設定再改進，改善會不會只是自然回歸平均？ |
-| **基礎比率忽略** | 這個改進幅度，和同類方法的典型差異相比算大嗎？ |
+| **HARKing** | Did this explanation exist before seeing the result, or was it thought up afterward? If afterward, mark it as a new hypothesis, not as a verification. |
+| **Confirmation bias** | When the result "fits expectations perfectly", did anyone seriously look for counter-evidence? Were only the metrics that support the hypothesis reported? |
+| **Noise as signal** | Is the difference larger than the seed-to-seed variance? Can a single-seed difference support a conclusion? |
+| **Multiple comparisons** | After comparing many groups, was the best-looking one picked out to talk about? |
+| **Gamed metric (Goodhart)** | The optimized metric improved; did the thing we actually care about also improve? (e.g. very low loss but a wrong solution) |
+| **Overgeneralization** | It holds under one condition; is the conclusion written as holding in general? (e.g. "SGD is inherently unsuitable" when only two settings were tested) |
+| **Correlation as causation** | Two things change together; has a third factor been ruled out? |
+| **Mechanism conflated with conclusion** | The conclusion holding doesn't mean the proposed mechanism is right. Was the mechanism verified independently? |
+| **Survivorship bias** | Were failed, diverged, or broken runs excluded from the statistics? |
+| **Regression to the mean** | If the worst-performing setting was picked and then improved, could the improvement be a natural regression to the mean? |
+| **Base-rate neglect** | How big is this improvement compared with typical differences between methods of this kind? |
 
-### 文獻與主張
+### Literature and claims
 
-| 謬誤 | 要追問的問題 |
+| Fallacy | Question to ask |
 |---|---|
-| **來源強度混淆** | 引用的結論是讀過全文、只看摘要，還是憑記憶？ |
-| **不可比的比較** | 拿別人論文的數字和我們比，設定真的可比嗎？ |
-| **因果線混淆** | 這個主張是原始研究動機，還是事後的發現？寫進論文時有沒有被包裝成原始設計？ |
+| **Confused source strength** | Is the cited conclusion from reading the full text, only the abstract, or memory? |
+| **Incomparable comparison** | When comparing our numbers with another paper's, are the settings really comparable? |
+| **Causal-line confusion** | Is this claim the original research motivation or a later finding? When written into the paper, is it packaged as the original design? |

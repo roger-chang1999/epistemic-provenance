@@ -1,7 +1,7 @@
-"""在專案中建立 research_log/ 骨架。已存在的檔案不會被覆蓋。
+"""Create a research_log/ skeleton in a project. Existing files are never overwritten.
 
-用法：
-    python init_research_log.py <專案根目錄> --project "<專案名稱>" [--dir research_log]
+Usage:
+    python init_research_log.py <project root> --project "<project name>" [--dir research_log]
 """
 import argparse
 import datetime
@@ -35,8 +35,8 @@ def write_new(path, content, created, skipped):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("root", help="專案根目錄")
-    ap.add_argument("--project", required=True, help="專案名稱")
+    ap.add_argument("root", help="project root directory")
+    ap.add_argument("--project", required=True, help="project name")
     ap.add_argument("--dir", default="research_log")
     a = ap.parse_args()
 
@@ -49,20 +49,22 @@ def main():
     for name in HUB_FILES:
         write_new(os.path.join(base, name), render(name, a.project, today), created, skipped)
     origin = render("idea.md", a.project, today).replace(
-        "# {{一句話標題：這次思考轉折是什麼}}（主線 {{N}}）",
-        f"# 研究起點：{a.project} 的原始研究動機（主線一）")
+        "# {{One-line title: what this turn in thinking is}} (line {{N}})",
+        f"# Starting point: the original research motivation of {a.project} (line 1)")
     write_new(os.path.join(base, "ideas", "001-origin.md"), origin, created, skipped)
     for sub in ["experiments", "papers"]:
         keep = os.path.join(base, sub, ".gitkeep")
         if not os.listdir(os.path.join(base, sub)):
             write_new(keep, "", created, skipped)
 
-    print(f"research log：{os.path.abspath(base)}")
+    print(f"research log: {os.path.abspath(base)}")
     for p in created:
-        print("  建立", os.path.relpath(p, base))
+        print("  created", os.path.relpath(p, base))
     for p in skipped:
-        print("  已存在，略過", os.path.relpath(p, base))
-    print("下一步：填入 README.md 的因果線、methods.md 的第一個協定、hypotheses.md 的初始假設、ideas/001-origin.md。")
+        print("  exists, skipped", os.path.relpath(p, base))
+    print("Next: fill in the log language and causal lines in README.md, the first protocol in methods.md, "
+          "the initial hypotheses in hypotheses.md, and ideas/001-origin.md. "
+          "Templates are in English; translate headings when the log language differs.")
 
 
 if __name__ == "__main__":

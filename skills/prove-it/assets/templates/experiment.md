@@ -7,59 +7,59 @@ results: []
 related: []
 ---
 
-# 實驗：{{標題}}
+# Experiment: {{Title}}
 
-## 動機
-{{對應哪個 idea、要回答哪個假設 H#、屬於哪條因果線}}
+## Motivation
+{{Which idea it comes from, which hypothesis H# it answers, which causal line it belongs to}}
 
-## 預測（關卡一，使用者確認於 {{YYYY-MM-DD}}）
-- 成立時應該看到：{{}}
-- 看到 {{}} 就代表不成立
+## Prediction (checkpoint one, confirmed by the user on {{YYYY-MM-DD}})
+- If it holds, we should see: {{}}
+- Seeing {{}} means it does not hold
 
-## 設計決策紀錄（關卡一）
+## Design decision log (checkpoint one)
 
-| 決策 | 選項 | 選定 | 決定者 | 理由 |
+| Decision | Options | Chosen | Decided by | Reason |
 |---|---|---|---|---|
-| {{例如：學習率}} | {{1e-3 / 1e-2}} | {{1e-3}} | {{使用者／Claude 提議經使用者同意／Claude 預設未經討論／依文獻}} | {{}} |
+| {{e.g. learning rate}} | {{1e-3 / 1e-2}} | {{1e-3}} | {{user / agent-proposed, user-approved / agent default, undiscussed / per literature}} | {{}} |
 
-關卡一審查：{{未選擇／嚴謹審查結果摘要／文獻搜尋結果摘要（連到 papers/）}}
+Checkpoint-one review: {{not chosen / summary of rigor review / summary of literature search (link to papers/)}}
 
-## 方法
-- 程式版本：{{commit hash}}
-- 指令：
+## Method
+- Code version: {{commit hash}}
+- Command:
   ```bash
-  {{完整可重現的指令}}
+  {{full reproducible command}}
   ```
-- 設定：{{和基準的差異}}
-- 協定：{{用 methods.md 的哪個協定評估}}
-- 硬體：{{；是否與其他工作共用}}
+- Settings: {{differences from the baseline}}
+- Protocol: {{which protocol from methods.md is used for evaluation}}
+- Hardware: {{; shared with other jobs or not}}
 
-## 結果
+## Results
 
-| 設定 | {{指標（協定）}} |
+| Setting | {{Metric (protocol)}} |
 |---|---|
 | | |
 
-## 分析討論（關卡二，可多輪）
-### 初步報告（④-1）
-- 結果 vs 預測：{{符合／不符合／部分符合，具體說明}}
-- 異常與實作偏差：{{}}
-- 替代解釋：{{}}
+## Analysis discussion (checkpoint two, may take several rounds)
+### Initial report (④-1)
+- Result vs prediction: {{matches / does not match / partly matches, with specifics}}
+- Anomalies and implementation deviations: {{}}
+- Alternative explanations: {{}}
 
-### 討論紀錄（④-2，每輪追加一段）
-#### 第 1 輪（YYYY-MM-DD）：{{議題}}
-- 使用者的解讀：{{如實記錄；Claude 認為需要修正的部分也寫出來}}
-- 補做的診斷：{{無／設計與結果}}
-- 共識：{{}}
-- 未決：{{}}
-- 審查：{{未選擇／嚴謹審查發現的問題與處理方式／文獻搜尋結果}}
+### Discussion record (④-2, append one section per round)
+#### Round 1 (YYYY-MM-DD): {{Issue}}
+- User's interpretation: {{record faithfully; also note the parts the agent thinks need correcting}}
+- Extra diagnostics: {{none / design and results}}
+- Consensus: {{}}
+- Open: {{}}
+- Review: {{not chosen / problems found by rigor review and how they were handled / literature search results}}
 
-### 結論確認（④-3）
-- 使用者確認日期：{{YYYY-MM-DD；未確認前狀態維持 analyzing}}
-- 下一步選項與使用者的選擇：{{結論確認後才提出；列出選項，以及選了哪個、為什麼}}
+### Conclusion confirmation (④-3)
+- Date confirmed by the user: {{YYYY-MM-DD; status stays analyzing until confirmed}}
+- Next-step options and the user's choice: {{proposed only after the conclusion is confirmed; list the options, which one was chosen, and why}}
 
-## 結論
-1. {{支持或推翻哪個假設，用了什麼證據}}
+## Conclusion
+1. {{Which hypothesis is supported or refuted, and by what evidence}}
 
-## 限制
-- {{seed 數、只測過的條件、未排除的替代解釋、不可比之處、未經討論的設計決策}}
+## Limitations
+- {{Seed count, conditions tested, alternative explanations not ruled out, incomparabilities, undiscussed design decisions}}

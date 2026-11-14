@@ -1,22 +1,22 @@
-# 工作流程 G：審查整份紀錄
+# Workflow G: review the whole log
 
-使用者說「review 一下 research log」、要把紀錄交給老師或合作者看，或隔一段時間回到專案時，讀這份文件。這是審查**紀錄本身**，和關卡中審查單一 node（`rigor-review.md`）不同。
+Read this when the user says "review the research log", wants to hand the log to an advisor or collaborator, or returns to the project after some time away. This reviews **the log itself**, unlike reviewing a single node at a checkpoint (`rigor-review.md`).
 
-**注意**：使用者要的如果是「回顧研究走過的路」或「向老師報告進度」，那是工作流程 E（`workflow-progress-report.md`），不是這份。這份只找紀錄本身的錯；要交給他人看時，先做這份，再依 E 寫回顧。
+**Note**: if what the user wants is "review the path the research took" or "report progress to my advisor", that is workflow E (`workflow-progress-report.md`), not this one. This one only finds errors in the log; when handing the log to others, do this first, then write the review per E.
 
-1. 執行：
+1. Run:
    ```bash
-   python <skill 目錄>/scripts/log_status.py <research_log 目錄>
+   python <skill directory>/scripts/log_status.py <research_log directory>
    ```
-   得到狀態總表：假設依狀態分組、等待使用者的 node、疑似狀態不一致、單一 seed 的實驗、未經討論的決策、只讀過摘要的文獻、停留過久的 idea。總表是啟發式的，用來找出值得看的地方；**先看總表，只打開被標出的檔案**，不要整份紀錄從頭讀。
-2. 逐項確認總表標出的地方，並檢查腳本抓不到的內容：
-   - **狀態是否名副其實**：confirmed 是否符合主張類型的條件（實作類有已知答案的驗證測試、實驗類多 seed 或多條件、依賴文獻者應維持 supported）？supported 的限制是否寫清楚？
-   - **結論是否超出證據**：hypotheses.md 和 comparison_catalog.md 的結論，有沒有比實驗記錄寫的更強？
-   - **因果線是否混淆**：有沒有事後發現被寫成原始動機？
-   - **協定是否一致**：同一張比較表的數字是不是同一協定、同一版本？
-   - **只追加原則**：被推翻的 idea 是否保留並標記，而不是被刪掉或改寫？（可用 `git log -p` 查看）
-   - **未經討論的決策**：其中哪些會影響目前的結論，值得回頭和使用者討論？
-   - **文獻依據**：被引用、比較或依其實作的文獻，是否都已讀過全文？
-3. 產出審查報告，依嚴重程度排序（致命／重要／次要），每項附檔案連結和建議的修正。
-4. **修正前先和使用者確認**。修正時遵守只追加原則：舊 idea 用「更新」段落，不改原文；hypotheses.md 的狀態欄可以直接更新，但要寫明理由。
-5. 執行 `scripts/check_links.py` 檢查格式問題。
+   This gives a status summary: hypotheses grouped by status, nodes waiting on the user, suspected status inconsistencies, single-seed experiments, undiscussed decisions, papers read only at the abstract level, and stale ideas. The summary is heuristic, meant to point at what is worth a look; **read the summary first and open only the flagged files**; don't read the whole log from the start.
+2. Check each flagged item, and also check what the script can't catch:
+   - **Is each status accurate?** Does each confirmed meet the condition for its claim type (implementation: a validation test with a known answer; experimental: multiple seeds or conditions; literature-dependent: should stay supported)? Are the limits of each supported stated clearly?
+   - **Do conclusions exceed the evidence?** Are the conclusions in hypotheses.md and comparison_catalog.md stronger than what the experiment records say?
+   - **Are causal lines confused?** Has any later finding been written up as the original motivation?
+   - **Are protocols consistent?** Are the numbers in each comparison table from the same protocol and version?
+   - **Append-only**: are refuted ideas kept and marked, not deleted or rewritten? (check with `git log -p`)
+   - **Undiscussed decisions**: which of them affect current conclusions and are worth discussing with the user?
+   - **Literature basis**: have all papers that are cited, compared against, or implemented from been read in full?
+3. Produce a review report sorted by severity (fatal / major / minor), with a file link and a suggested fix for each item.
+4. **Confirm with the user before fixing anything.** Follow the append-only rule when fixing: use an "Update" section on old ideas, don't change the original text; the status cells in hypotheses.md may be updated directly, with the reason written down.
+5. Run `scripts/check_links.py` to check for format problems.

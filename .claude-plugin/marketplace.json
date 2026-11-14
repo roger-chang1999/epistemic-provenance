@@ -1,6 +1,6 @@
 {
   "name": "prove-it",
-  "description": "roger-chang1999 的研究工作流程 plugin",
+  "description": "roger-chang1999's research workflow plugins",
   "owner": {
     "name": "roger-chang1999"
   },
@@ -8,7 +8,7 @@
     {
       "name": "prove-it",
       "source": "./",
-      "description": "prove-it：每個主張都要能證明的研究紀錄系統（research log）"
+      "description": "prove-it: a research log where every claim must be provable"
     }
   ]
 }

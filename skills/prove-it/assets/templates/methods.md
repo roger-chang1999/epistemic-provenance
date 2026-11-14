@@ -1,35 +1,35 @@
-# 評估方法登記表
+# Evaluation protocol registry
 
-這個檔案回答「這個數字是怎麼量出來的」。它不放實驗結果本身，只放**量測方法**的定義、彼此的差異，以及各自回答什麼問題。每次引用或比較數字前，先確認是同一種協定量出來的。
-
----
-
-## 協定一：{{名稱}}
-
-**回答的問題**：{{這個數字代表什麼}}
-
-**Recipe**：
-1. {{步驟，包含資料、參數、取哪個點（最佳或最後）}}
-
-**適合比較的情境**：{{}}
-
-**常見陷阱**：
-- {{已經踩過或可預見的誤用}}
+This file answers "how was this number measured?". It holds no experiment results, only the definitions of **measurement methods**, how they differ, and what question each answers. Before citing or comparing a number, confirm it was measured with the same protocol.
 
 ---
 
-## 協定版本變更紀錄（跨版本的數字不能直接比）
+## Protocol 1: {{Name}}
 
-| 版本 | 日期 | 變更 | 影響 |
+**Question it answers**: {{what this number represents}}
+
+**Recipe**:
+1. {{Steps, including data, parameters, and which point is taken (best or last)}}
+
+**Suitable comparisons**: {{}}
+
+**Common pitfalls**:
+- {{misuses already encountered or foreseeable}}
+
+---
+
+## Protocol version history (numbers across versions are not directly comparable)
+
+| Version | Date | Change | Impact |
 |---|---|---|---|
-| v1 | {{YYYY-MM-DD}} | 初版 | — |
+| v1 | {{YYYY-MM-DD}} | Initial version | — |
 
 ---
 
-## 速查表
+## Quick reference
 
-| 協定 | 量什麼 | 主要陷阱 |
+| Protocol | What it measures | Main pitfall |
 |---|---|---|
-| ① {{名稱}} | {{}} | {{}} |
+| ① {{Name}} | {{}} | {{}} |
 
-**下結論前先確認**：比較表上的數字如果沒有特別註明，預設是哪個協定：{{填入}}。
+**Check before concluding**: when a number in a comparison table has no protocol noted, the default protocol is: {{fill in}}.

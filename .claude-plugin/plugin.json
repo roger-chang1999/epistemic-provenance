@@ -1,7 +1,7 @@
 {
   "name": "prove-it",
-  "version": "0.7.0",
-  "description": "prove-it：每個主張都要能證明。為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄",
+  "version": "0.8.0",
+  "description": "prove-it: every claim must be provable. A research log and human-in-the-loop workflow that records where each claim came from, why it holds, and how it changed.",
   "author": {
     "name": "roger-chang1999"
   }

@@ -1,23 +1,23 @@
-# 文獻搜尋：做法與記錄方式
+# Literature search: method and recording
 
-使用者在關卡一或關卡二選擇「文獻搜尋」時，讀這份文件。
+Read this when the user chooses "literature search" at checkpoint one or two.
 
-**目的**：針對這個 node 的具體問題，找到能支持、挑戰或解釋結果的引用。漫無目的的搜尋很耗時間和 token，所以每次搜尋都要先有明確的問題。
+**Purpose**: find citations that support, challenge, or explain the results, targeted at this node's specific question. Aimless searching wastes time and tokens, so every search starts from a clear question.
 
-## 做法
+## Method
 
-1. **先提出搜尋問題，等使用者同意**。列出 1–3 個具體問題、各自的理由，以及預期找到什麼。例如：
-   - 關卡一：「這個優化器用在同類問題時，文獻常用的超參數是多少？」可以避免自己隨手選預設值。
-   - 關卡二：「有沒有人觀察過 L-BFGS 在反算問題中讓誤差變差？」用來確認觀察到的現象是不是已知的。
-   - 關卡二：「這個機制有沒有現成的理論解釋？」
-2. **搜尋**：用環境提供的搜尋工具。先用一般搜尋；結果太少、太舊或偏題時，再用更深入的搜尋，或直接讀論文頁面。優先找同儕審查的論文；預印本、部落格、自動生成的摘要都要標明。
-3. **回報**：每個問題各回報結論。找不到相關文獻時要明說，這本身也是有用的資訊（可能是研究缺口，也可能只是搜尋方式不對）。
-4. **記錄**：每篇有用的文獻寫成 `papers/<slug>.md`（模板 `assets/templates/paper.md`），並連回觸發搜尋的 idea 或實驗。
+1. **Propose search questions first and wait for the user's agreement.** List 1–3 specific questions, the reason for each, and what you expect to find. For example:
+   - Checkpoint one: "What hyperparameters does the literature typically use for this optimizer on this class of problem?" This avoids picking a default casually.
+   - Checkpoint two: "Has anyone observed L-BFGS making the error worse in inverse problems?" This checks whether the observed phenomenon is already known.
+   - Checkpoint two: "Is there an existing theoretical explanation for this mechanism?"
+2. **Search**: use the search tools the environment provides. Start with a normal search; if results are thin, outdated, or off-topic, use a deeper search or read the paper pages directly. Prefer peer-reviewed papers; label preprints, blogs, and auto-generated summaries as such.
+3. **Report**: give a conclusion for each question. If no relevant literature turns up, say so; that is useful information too (it may be a research gap, or just a poor search).
+4. **Record**: write each useful paper as `papers/<slug>.md` (template `assets/templates/paper.md`) and link it back to the idea or experiment that triggered the search.
 
-## 記錄時特別注意
+## When recording, pay attention to
 
-- **`source:` 欄位要誠實**：讀過全文、只讀摘要、搜尋結果摘要、自動生成的二手摘要、依記憶整理。只看過搜尋摘要時，不能寫成讀過論文。
-- **數字要附條件**：文獻報告的數字，要寫清楚是在什麼設定下得到的。
-- **不可比之處**：設定、資料、指標和我們差在哪裡。
-- **待辦**：沒讀全文時，列出「讀全文確認 X」。
-- 回覆使用者時，列出所用的來源連結。
+- **Be honest in `source:`**: read full text, abstract only, search-result snippet, auto-generated secondary summary, or from memory. If you only saw a search snippet, don't write it up as having read the paper.
+- **Numbers come with conditions**: state the setting under which each reported number was obtained.
+- **What is not comparable**: how the setting, data, and metrics differ from ours.
+- **To-do**: if the full text hasn't been read, list "read the full text to confirm X".
+- When replying to the user, list the source links used.

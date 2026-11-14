@@ -1,10 +1,10 @@
-# 工作流程 F：根據紀錄撰寫論文、報告
+# Workflow F: write papers and reports from the log
 
-使用者要根據 research log 撰寫論文章節、研究報告或簡報時，讀這份文件。
+Read this when the user wants to write paper sections, research reports, or slides from the research log.
 
-- **依因果線分開敘述**：原始研究動機寫在前言和方法；看到結果後才出現的發現，寫成「進一步分析」或「討論」，**不要包裝成原始設計**。各條線的定義在 `research_log/README.md`。
-- **每個數字都要能追溯**：引用的數字要對應到實驗記錄和 `methods.md` 的協定與版本；不同協定的數字不放在同一張表。
-- **主張強度要和狀態一致**：`supported` 的結論要帶上限制條件；只有 `confirmed` 的才能寫成肯定句。依賴文獻的機制解釋，要寫明是「與某文獻的解釋一致」，而不是「證明了」。
-- **引用前讀完全文**：只讀過摘要的文獻不能引用；先讀全文，確認引用的內容、數字和適用條件正確，再更新 `source:`。
-- **被推翻的假設和已排除的論述也是素材**：適合寫進消融實驗、限制、或「我們也嘗試過但不成立的做法」。
-- **未經討論的設計決策**：如果影響結論，寫進限制段落，或在撰寫前先和使用者確認是否要補實驗。
+- **Tell each causal line separately**: the original research motivation goes in the introduction and methods; findings that appeared only after seeing results go under "further analysis" or "discussion", **not packaged as the original design**. The lines are defined in `research_log/README.md`.
+- **Every number must be traceable**: each cited number maps to an experiment record and to a protocol and version in `methods.md`; numbers from different protocols don't go in the same table.
+- **Claim strength matches status**: `supported` conclusions carry their limiting conditions; only `confirmed` ones may be stated affirmatively. A mechanistic explanation that depends on the literature is written as "consistent with the explanation in X", not "proves".
+- **Read the full text before citing**: papers read only at the abstract level can't be cited; read the full text first, confirm that the cited content, numbers, and applicable conditions are right, then update `source:`.
+- **Refuted hypotheses and excluded claims are material too**: they fit in ablations, limitations, or "approaches we also tried that did not work".
+- **Undiscussed design decisions**: if one affects a conclusion, put it in the limitations, or confirm with the user before writing whether an extra experiment is needed.

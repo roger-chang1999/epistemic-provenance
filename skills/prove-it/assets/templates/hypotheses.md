@@ -1,24 +1,24 @@
-# 假設索引（中樞）
+# Hypothesis index (hub)
 
-這是最常回來查的檔案。每條假設都連到「哪個想法提出的」和「哪些實驗支持或推翻」。
+The file you will come back to most. Each hypothesis links to "the idea that proposed it" and "the experiments that support or refute it".
 
-狀態用語：**open**（尚未驗證）、**proposed**（已提出設計，等使用者確認）、**planned**（使用者已確認設計）、**analyzing**（實驗已跑完、分析討論中，結論未確認）、**supported**（有證據但條件有限）、**confirmed**（多次或多條件驗證）、**refuted**（被推翻）、**superseded**（被更精確的假設取代）。
+Status terms: **open** (not yet tested), **proposed** (design proposed, awaiting user confirmation), **planned** (design confirmed by the user), **analyzing** (experiment finished, analysis under discussion, conclusion not confirmed), **supported** (evidence under limited conditions), **confirmed** (verified repeatedly or under multiple conditions), **refuted**, **superseded** (replaced by a more precise hypothesis).
 
-## 當前最前沿的待分析問題
+## Current research frontier
 
-1. {{目前最需要回答的問題，以及要用哪個實驗回答}}
+1. {{The question most in need of an answer now, and which experiment will answer it}}
 
-## 主線一：{{原始研究動機}}（見 [idea 001](ideas/001-origin.md)）
+## Line 1: {{original research motivation}} (see [idea 001](ideas/001-origin.md))
 
-| # | 假設 | 狀態 | 提出於 | 支持/推翻證據 |
+| # | Hypothesis | Status | Proposed in | Supporting / refuting evidence |
 |---|---|---|---|---|
-| H1 | {{假設}} | **open** | [idea 001](ideas/001-origin.md) | 尚無 |
+| H1 | {{Hypothesis}} | **open** | [idea 001](ideas/001-origin.md) | None yet |
 
-## 主線二：{{事後出現的線}}
+## Line 2: {{line that appeared later}}
 
-| # | 假設 | 狀態 | 提出於 | 支持/推翻證據 |
+| # | Hypothesis | Status | Proposed in | Supporting / refuting evidence |
 |---|---|---|---|---|
 
-## 已排除或刻意不主張的論述
+## Excluded or deliberately unclaimed statements
 
-- ~~{{被排除的論述}}~~：{{原因與連結}}
+- ~~{{Excluded statement}}~~: {{reason and link}}

@@ -1,19 +1,19 @@
-# {{PROJECT}} 研究樹總覽
+# {{PROJECT}} research tree overview
 
-結構：每個 block 是「假設 → 實驗設計 → 結果 → 推論」，盡量一句話。推論後面的 `⟹` 指向它推動出來的下一個假設（同分支內順接；跨分支時標註分支名）。這裡呈現的是**實際的研究依賴鏈**，不是論文寫作順序。
-
----
-
-## 分支 0：起源與設計動機
-
-**H1 — {{簡稱}}**
-- 假設：{{}}
-- 實驗設計：{{}}
-- 結果：{{尚未開始／數字}}
-- 推論：{{}} ⟹ {{下一個假設}}
+Structure: each block is "hypothesis → experiment design → result → inference", one sentence each where possible. The `⟹` after an inference points to the next hypothesis it led to (in sequence within a branch; name the branch when crossing branches). This shows **the actual research dependency chain**, not the order of the paper.
 
 ---
 
-## 尚待決策（直接影響研究骨架）
+## Branch 0: origin and design motivation
+
+**H1 — {{Short name}}**
+- Hypothesis: {{}}
+- Experiment design: {{}}
+- Result: {{not started / numbers}}
+- Inference: {{}} ⟹ {{next hypothesis}}
+
+---
+
+## Pending decisions (directly affecting the research skeleton)
 
 1. {{}}

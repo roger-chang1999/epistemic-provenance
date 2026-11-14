@@ -1,13 +1,13 @@
-"""檢查 research_log 內的相對連結與 frontmatter，並列出缺漏。
+"""Check the relative links and frontmatter in a research_log and list problems.
 
-檢查項目：
-  1. markdown 相對連結 [x](path.md) 與 frontmatter related: [...] 指向的檔案是否存在
-  2. ideas/experiments/papers 的檔案是否有 frontmatter，以及 type、status 欄位
-  3. ideas 編號是否重複
+Checks:
+  1. Whether files targeted by markdown relative links [x](path.md) and frontmatter related: [...] exist
+  2. Whether files in ideas/experiments/papers have frontmatter with type and status fields
+  3. Whether idea numbers are duplicated
 
-用法：
-    python check_links.py [research_log 目錄，預設 ./research_log]
-回傳碼：有問題時為 1。
+Usage:
+    python check_links.py [research_log directory, default ./research_log]
+Exit code: 1 when problems are found.
 """
 import glob
 import os
@@ -35,28 +35,29 @@ def frontmatter(txt):
 def main():
     base = sys.argv[1] if len(sys.argv) > 1 else "research_log"
     if not os.path.isdir(base):
-        print(f"找不到目錄 {base}")
+        print(f"Directory not found: {base}")
         return 1
     problems = []
     files = glob.glob(os.path.join(base, "**", "*.md"), recursive=True)
     for f in files:
         txt = open(f, encoding="utf-8").read()
-        # 略過程式碼區塊內的連結（例如格式範例）
+        # Skip links inside code blocks (e.g. format examples)
         body = re.sub(r"```.*?```", "", txt, flags=re.S)
-        body = re.sub(r"`[^`\n]*`", "", body)  # 行內程式碼（格式範例）
+        body = re.sub(r"`[^`\n]*`", "", body)  # inline code (format examples)
         links = re.findall(r"\]\(([^)#\s]+\.md)(?:#[^)]*)?\)", body)
         fm = frontmatter(txt)
         rel = os.path.relpath(f, base)
         top = rel.split(os.sep)[0]
         if top in ("ideas", "experiments", "papers"):
             if fm is None:
-                problems.append(f"{rel}：缺少 frontmatter")
+                problems.append(f"{rel}: missing frontmatter")
             else:
                 if "type" not in fm:
-                    problems.append(f"{rel}：frontmatter 缺少 type")
+                    problems.append(f"{rel}: frontmatter missing type")
                 st = fm.get("status", "")
                 if top != "papers" and st and st.split()[0].strip(",") not in STATUS:
-                    problems.append(f"{rel}：status「{st}」不在標準詞彙 {sorted(STATUS)}（可接受，但建議統一）")
+                    problems.append(f"{rel}: status '{st}' is not in the standard vocabulary {sorted(STATUS)} "
+                                    "(acceptable, but consistency is recommended)")
                 if "related" in fm:
                     inner = fm["related"].strip().lstrip("[").rstrip("]")
                     links += [x.strip() for x in inner.split(",") if x.strip()]
@@ -65,7 +66,7 @@ def main():
                 continue
             target = os.path.normpath(os.path.join(os.path.dirname(f), link))
             if not os.path.exists(target):
-                problems.append(f"{rel}：連結斷掉 → {link}")
+                problems.append(f"{rel}: broken link → {link}")
 
     nums = {}
     for f in glob.glob(os.path.join(base, "ideas", "*.md")):
@@ -74,13 +75,13 @@ def main():
             nums.setdefault(m.group(1), []).append(os.path.basename(f))
     for n, fs in nums.items():
         if len(fs) > 1:
-            problems.append(f"ideas 編號重複 {n}：{fs}")
+            problems.append(f"duplicate idea number {n}: {fs}")
 
-    print(f"檢查 {len(files)} 個檔案")
+    print(f"Checked {len(files)} files")
     for p in problems:
         print("  ✗", p)
     if not problems:
-        print("  ✓ 沒有問題")
+        print("  ✓ No problems")
     return 1 if problems else 0
 
 

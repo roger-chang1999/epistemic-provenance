@@ -1,34 +1,34 @@
-# 比較實驗總目錄
+# Comparison catalog
 
-把專案做過的每一組「A vs B」比較用統一格式列出，方便快速查閱，也方便寫論文或簡報時直接引用。格式：
+Every "A vs B" comparison in the project, listed in one format for quick lookup and for direct citation when writing papers or slides. Format:
 
-- **比較內容**：什麼設定 vs 什麼設定
-- **比較點**：為什麼這樣比（想回答什麼問題）
-- **數據表格**：實驗數據（註明協定，見 [methods.md](methods.md)）
-- **簡單結論**：這組數據說明了什麼
+- **Compared**: which setting vs which setting
+- **Why compare**: what question this comparison answers
+- **Data table**: experiment data (state the protocol; see [methods.md](methods.md))
+- **Short conclusion**: what this data shows
 
-每一條最後保留對應的假設編號和原始記錄連結。順序依研究依賴鏈（和 [research_tree_overview](research_tree_overview.md) 的分支一致），不是時間順序。
+Each entry ends with its hypothesis ID and a link to the original record. Entries follow the research dependency chain (matching the branches of [research_tree_overview](research_tree_overview.md)), not chronological order.
 
 ---
 
-## 一、{{分支名稱}}
+## I. {{Branch name}}
 
-### 1. {{變因}}：{{A}} vs {{B}}
+### 1. {{Variable}}: {{A}} vs {{B}}
 
-- **比較內容**：{{}}
-- **比較點**：{{}}
-- **數據表格**：
+- **Compared**: {{}}
+- **Why compare**: {{}}
+- **Data table**:
 
-  | 設定 | {{指標}} |
+  | Setting | {{Metric}} |
   |---|---|
   | {{A}} | |
   | {{B}} | |
 
-- **簡單結論**：{{}}
-  （H#，對應的實驗記錄連結）
+- **Short conclusion**: {{}}
+  (H#, link to the experiment record)
 
 ---
 
-## 索引：依變因種類查找
+## Index: by kind of variable
 
-- **{{變因種類}}**：比較 1
+- **{{Kind of variable}}**: comparison 1
