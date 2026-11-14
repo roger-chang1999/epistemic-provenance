@@ -1,9 +1,11 @@
 ---
-name: epistemic-provenance
-description: 知識來源追溯（epistemic provenance）的研究紀錄系統（research log）與 human-in-the-loop 研究流程：為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄；每個假設都在「實驗設計」和「結果分析」兩個關卡和使用者討論。只要使用者在做研究或實驗，就使用這個 skill：討論實驗設計、分析實驗結果並決定下一步、初始化 research log、記錄實驗結果、寫下新想法、整理論文筆記、更新假設狀態、比較實驗數據、問研究進度、審查紀錄，或根據紀錄撰寫論文與報告。也適用於使用者提到 research_log、hypotheses.md、實驗紀錄、研究筆記、research journal、lab notebook、experiment log、ablation 等，即使沒有明說要用這個 skill。
+name: prove-it
+description: prove-it：每個主張都要能證明。基於知識來源追溯（epistemic provenance）的研究紀錄系統（research log）與 human-in-the-loop 研究流程：為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄；每個假設都在「實驗設計」和「結果分析」兩個關卡和使用者討論。只要使用者在做研究或實驗，就使用這個 skill：討論實驗設計、分析實驗結果並決定下一步、初始化 research log、記錄實驗結果、寫下新想法、整理論文筆記、更新假設狀態、比較實驗數據、問研究進度、審查紀錄，或根據紀錄撰寫論文與報告。也適用於使用者提到 research_log、hypotheses.md、實驗紀錄、研究筆記、research journal、lab notebook、experiment log、ablation 等，即使沒有明說要用這個 skill。
 ---
 
-# Epistemic Provenance：知識來源追溯
+# prove-it：每個主張都要能證明
+
+基於「知識來源追溯」（epistemic provenance）的原則。
 
 > **為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄。**
 

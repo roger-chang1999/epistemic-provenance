@@ -1,7 +1,7 @@
 {
-  "name": "epistemic-provenance",
-  "version": "0.6.0",
-  "description": "知識來源追溯：為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄",
+  "name": "prove-it",
+  "version": "0.7.0",
+  "description": "prove-it：每個主張都要能證明。為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄",
   "author": {
     "name": "roger-chang1999"
   }

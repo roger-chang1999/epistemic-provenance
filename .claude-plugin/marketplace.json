@@ -1,14 +1,14 @@
 {
-  "name": "epistemic-provenance",
+  "name": "prove-it",
   "description": "roger-chang1999 的研究工作流程 plugin",
   "owner": {
     "name": "roger-chang1999"
   },
   "plugins": [
     {
-      "name": "epistemic-provenance",
+      "name": "prove-it",
       "source": "./",
-      "description": "知識來源追溯的研究紀錄系統（research log）"
+      "description": "prove-it：每個主張都要能證明的研究紀錄系統（research log）"
     }
   ]
 }

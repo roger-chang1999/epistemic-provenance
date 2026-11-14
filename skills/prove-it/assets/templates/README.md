@@ -73,4 +73,4 @@ related: [相對路徑列表]
 - [ ] 未經討論的決策中，有哪些會影響目前的結論
 - [ ] 被引用、比較或依其實作的文獻，都已讀過全文
 
-如果有安裝 epistemic-provenance skill，可以用 `scripts/log_status.py` 產生狀態總表作為起點。
+如果有安裝 prove-it skill，可以用 `scripts/log_status.py` 產生狀態總表作為起點。

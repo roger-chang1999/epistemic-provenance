@@ -1,4 +1,8 @@
-# epistemic-provenance（知識來源追溯）
+# prove-it
+
+> **Every claim must be provable: where it came from, why it holds, how it changed.**
+
+（舊名 epistemic-provenance，v0.7.0 改名。）
 
 > **為研究中的每個主張，保留它從哪裡來、憑什麼成立、怎麼被改變的完整紀錄。**
 
@@ -48,13 +52,13 @@ research_log/
 ## 安裝：Claude Code
 
 ```bash
-claude plugin marketplace add roger-chang1999/epistemic-provenance
-claude plugin install epistemic-provenance@epistemic-provenance
+claude plugin marketplace add roger-chang1999/prove-it
+claude plugin install prove-it@prove-it
 ```
 
-或在 Claude Code 對話中輸入 `/plugin marketplace add roger-chang1999/epistemic-provenance`，再用 `/plugin` 面板安裝。
+或在 Claude Code 對話中輸入 `/plugin marketplace add roger-chang1999/prove-it`，再用 `/plugin` 面板安裝。
 
-更新：`claude plugin marketplace update epistemic-provenance`
+更新：`claude plugin marketplace update prove-it`
 
 ## 安裝：claude.ai
 
@@ -62,7 +66,7 @@ claude plugin install epistemic-provenance@epistemic-provenance
 python tools/package_for_claudeai.py
 ```
 
-會產生 `dist/epistemic-provenance.zip`。到 claude.ai 的「設定 → Capabilities → Skills」上傳。
+會產生 `dist/prove-it.zip`。到 claude.ai 的「設定 → Capabilities → Skills」上傳。
 
 ## 使用
 
@@ -77,14 +81,14 @@ python tools/package_for_claudeai.py
 - 「實驗跑完了，幫我分析結果」
 - 「review 一下 research log」
 
-也可以明確呼叫：`/epistemic-provenance:epistemic-provenance`
+也可以明確呼叫：`/prove-it:prove-it`
 
 ## 內容
 
 ```
 .claude-plugin/
   plugin.json, marketplace.json
-skills/epistemic-provenance/
+skills/prove-it/
   SKILL.md                      核心原則與工作流程
   references/rigor-review.md    嚴謹審查：做法與研究謬誤檢查清單
   references/workflow-*.md      初始化、回報進度與研究歷程回顧、審查整份紀錄、撰寫論文（用到時才讀）
